@@ -209,9 +209,40 @@ external :
 ``` css
 p { color: green; }
 ```
+Hasil di browser: teks tetap hitam (#000000) karena inline CSS menang.
 
+Urutannya: Inline > Internal > Eksternal.
 
+# 4. Elemen dengan ID dan Class
 
+Dalam program ada contoh:
+
+html
+``` html
+<a class="button btn-primary" href="#intro">Informasi selengkapnya.</a>
+```
+
+css
+``` css
+a { color: green; }              /* selector elemen */
+.button { color: blue; }         /* selector class */
+#intro a { color: red; }         /* selector ID */
+
+```
+Hasil: Link tersebut akan merah, karena selector #intro a lebih spesifik daripada class .button atau selector elemen a.
+
+Urutan kekuatan selector:
+Inline > ID > Class > Elemen
+
+Kesimpulan dari program ini
+
+Kita bisa menambah properti baru di CSS internal/eksternal untuk eksperimen.
+
+h1 {} berlaku global, sedangkan #intro h1 {} hanya berlaku untuk <h1> di dalam id="intro".
+
+Inline CSS punya prioritas paling tinggi, baru internal, terakhir eksternal.
+
+Jika elemen punya ID dan Class, maka ID lebih kuat dibanding class.
 
 
 
