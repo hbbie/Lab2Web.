@@ -144,6 +144,74 @@ background: #E42A42;
 
 
 
+# Pertanyaan dan Tugas
+1. Lakukan eksperimen dengan mengubah dan menambah properti dan nilai pada kode CSS
+dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul ini.
+2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan
+penjelasannya!
+3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline CSS pada
+elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser? Berikan
+penjelasan dan contohnya!
+4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector tersebut
+terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada browser?
+Berikan penjelasan dan contohnya! ( <p id="paragraf-1" class="text-paragraf">
+
+Jawaban
+
+1.Eksperimen menambah properti CSS
+
+Kita bisa menambahkan beberapa properti baru di CSS internal atau eksternal.
+Contoh modifikasi dari program yang saya buat 
+``` html
+h1 {
+  font-size: 24px;
+  color: #0F189F;
+  text-align: center;
+  padding: 20px 10px;
+  text-transform: uppercase;   /* tambahan */
+  letter-spacing: 2px;         /* tambahan */
+  background-color: #f0f8ff;   /* tambahan */
+}
+```
+
+Dengan ini, teks ```<h1>``` akan jadi huruf besar semua, ada jarak antar huruf, dan background warna biru muda.
+
+ 2. Perbedaan h1 {} dengan #intro h1 {}
+
+Dalam programmu sudah ada elemen:
+```<div id="intro">
+  <h1>Hello World</h1>
+</div>
+```
+h1 {} → mengatur semua tag <h1> (baik di header maupun di dalam div).
+
+intro h1 {} → hanya mengatur <h1> yang ada di dalam <div id="intro">.
+
+``` h1 { color: blue; }
+#intro h1 { color: red; }
+```
+
+Maka ```<h1>``` di header akan biru, tetapi <h1>Hello World</h1> di dalam #intro akan merah.
+
+3.Prioritas Inline, Internal, Eksternal CSS
+
+Dalam programmu sudah ada eksternal (style.css), internal (<style>...</style>), dan inline (<p style="...">).
+
+``` html
+<p style="text-align: center; color: #000000;">Kami sedang belajar...</p>
+```
+
+```css
+p { color: blue; }
+```
+
+external :
+``` css
+p { color: green; }
+```
+
+
+
 
 
 
